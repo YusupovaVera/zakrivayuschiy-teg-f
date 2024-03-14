@@ -173,12 +173,10 @@
   height: 100%;
   justify-content: center;
   border: var(--border);
-  width: 375px;
-  height: 373px;
 }
 
 .card__content {
- margin-top: 25px;
+  margin-top: 25px;
 }
 
 .card__paragraph {
@@ -269,7 +267,6 @@
   line-height: 21px;
   letter-spacing: 0em;
   gap: 20px;
- 
 }
 
 .dialog__button {
@@ -300,7 +297,4 @@
   min-width: 39px;
   height: 39px;
   color: var(--floppy-icon-color);
-}
-
-@media (width <= 375px) {
 }
