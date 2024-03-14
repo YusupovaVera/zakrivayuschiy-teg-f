@@ -1,1 +1,23 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --background-image: repeating-linear-gradient(
+      to left,
+      #d3d3d3,
+      transparent 2px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3, transparent 2px),
+    repeating-linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --main-font: "Inter-Variable", "Arial", sans-serif;
+  --accent-font: "PressStart2P", "Papyrus", fantasy;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --weight-post-title: 700;
+  --weight-post-content: 400;
+  --border: 2px solid #000000;
+  --watermark-shadow: #ffffff;
+  --floppy-icon-color: #000000;
+  --pointer-color: #000000;
+  --heart-contour-color: #000000; /* цвет контура сердца*/
+  --heart-main-body-color: #ff0000; /* цвет основного тела сердца */
+  --heart-sparks-color: #ff0000; /* цвет искр вокруг */
+}

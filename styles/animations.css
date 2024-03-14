@@ -12,3 +12,106 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.like-icon .contour {
+  transition: fill;
+  fill: var(--heart-contour-color);
+  transition-duration: 0.1s;
+  transition-delay: 0s;
+  transition-timing-function: linear;
+}
+
+.like-icon .main-body {
+  transition: fill;
+  fill: transparent;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+  transition-timing-function: linear;
+}
+
+.like-icon .core {
+  transition: fill;
+  fill: transparent;
+  transition-duration: 0.3s;
+  transition-delay: 0.03s;
+  transition-timing-function: linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-contour-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: var(--heart-contour-color);
+}
+
+.like-icon:active .core {
+  fill: var(--heart-sparks-color);
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-sparks-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-sparks-color);
+  transition-duration: 0.3s;
+  transition-delay: 0.06s;
+  transition-timing-function: linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-sparks-color);
+  transition-duration: 0.3s;
+  transition-delay: 0.06s;
+  transition-timing-function: linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-sparks-color);
+  transition-duration: 0.3s;
+  transition-delay: 0.06s;
+  transition-timing-function: linear;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: scale-shift 0.3s 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-shift 0.3s 0.3s;
+}
+
+@keyframes scale-shift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparks-shift {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+@keyframes shootout-shift {
+  from {
+    left: -23px;
+  }
+  to {
+    left: -25px;
+  }
+}
