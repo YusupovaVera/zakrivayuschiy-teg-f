@@ -156,26 +156,29 @@
 }
 
 .card__image-watermark {
+  width: 100%;
+  display: inline-flex;
+  justify-content: right;
   position: absolute;
   font-family: var(--accent-font, "Papyrus", fantasy);
   font-size: 14px;
   font-weight: 400;
   line-height: 63px;
-  right: 13px;
   z-index: 1;
   opacity: 0.5;
   text-shadow: 1px 0 var(--watermark-shadow, #ffffff),
     -1px 0 var(--watermark-shadow, #ffffff);
   color: var(--text-color, #000000);
+  padding-right: 13px;
 }
 
 .picture {
   object-fit: cover;
   width: 100%;
-  height: 100%;
   justify-content: center;
   border: var(--border);
   object-position: center;
+  aspect-ratio: 1/1;
 }
 
 .card__content {
@@ -196,18 +199,23 @@
   flex-direction: row;
   padding: 0 25px 25px 0;
   justify-content: flex-end;
+  gap: 2px;
 }
 
 .like-icon {
   vertical-align: middle;
-  width: 39px;
-  height: 36px;
+  width: 36px;
+  height: 32px;
+}
+
+.like-icon:hover {
+  cursor: pointer;
 }
 
 .card__icon-button {
   display: flex;
   justify-content: center;
-  border: none;
+  border: 2px solid transparent;
   background: transparent;
   outline: none;
   align-items: center;
@@ -223,9 +231,34 @@
   border: var(--border);
 }
 
-.card__like-button-shadow:focus {
+.button-shadow {
+  position: relative;
+  background-color: var(--background-color);
+  transition: box-shadow 0.3s ease;
+  border: var(--border);
+}
+
+.button-shadow:focus {
   box-shadow: 2px 2px 0 0 var(--text-color);
   outline: none;
+}
+
+.button-shadow::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  inset: 0;
+  background-color: var(--text-color);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button-shadow:hover::before {
+  transform: scaleX(1);
+  cursor: pointer;
 }
 
 .card__like-button {
@@ -236,12 +269,17 @@
   outline: none;
 }
 
+.button__floppy {
+  display: flex;
+  justify-content: center;
+}
+
 .button__save {
   width: 310px;
   height: 84px;
   background: transparent;
   border: var(--border);
-  margin: 52px 34.5px 100px 34.5px;
+  margin: 52px 0 100px 0;
   background-color: var(--background-color, #ffffff);
   display: flex;
   flex-direction: column;
@@ -257,8 +295,9 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 13px;
-  color: var(--text-color, #000000);
+  color: white;
   background: transparent;
+  mix-blend-mode: difference;
 }
 
 .button__text:hover {
@@ -317,4 +356,7 @@
   min-width: 39px;
   height: 39px;
   color: var(--floppy-icon-color);
+}
+
+@media (width > 375px) {
 }

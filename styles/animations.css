@@ -80,11 +80,15 @@
 
 .like-icon.is-liked .heart {
   transform-origin: center;
-  animation: scale-shift 0.3s 0.1s;
+  animation-direction: alternate;
+  animation-duration: 0.3s;
+  animation-name: scale-shift;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-shift 0.3s 0.3s;
+  animation-direction: alternate;
+  animation-duration: 0.3s;
+  animation-name: sparks-shift;
 }
 
 @keyframes scale-shift {
@@ -92,7 +96,7 @@
     transform: scale(1);
   }
   to {
-    transform: scale(1.5);
+    transform: scale(1.12);
   }
 }
 

@@ -105,7 +105,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button card__like-button-shadow" type="button">
+          <button class="card__like-button button-shadow" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -130,9 +130,7 @@
             ощущением скрываются более глубокие вопросы: с чего начать? а вдруг
             будет слишком сложно? что, если я не справлюсь?
           </p>
-          <p class="card__paragraph">
-            Мне точно сюда? Может в другой раз? 
-          </p>
+          <p class="card__paragraph">Мне точно сюда? Может в другой раз?</p>
         </div>
         <div class="card__buttons">
           <button class="card__icon-button" type="button">
@@ -169,7 +167,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button card__like-button-shadow" type="button">
+          <button class="card__like-button button-shadow" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -229,7 +227,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button card__like-button-shadow" type="button">
+          <button class="card__like-button button-shadow" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -293,7 +291,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button card__like-button-shadow" type="button">
+          <button class="card__like-button button-shadow" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -358,7 +356,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button card__like-button-shadow" type="button">
+          <button class="card__like-button button-shadow" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -420,7 +418,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button card__like-button-shadow" type="button">
+          <button class="card__like-button button-shadow" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -484,7 +482,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button card__like-button-shadow" type="button">
+          <button class="card__like-button button-shadow" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -511,7 +509,7 @@
             и есть результат.
           </p>
           <p class="card__paragraph">
-            Как много всего нужно успеть сверстать. Я точно успею? 
+            Как много всего нужно успеть сверстать. Я точно успею?
           </p>
         </div>
         <div class="card__buttons">
@@ -549,33 +547,46 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button card__like-button-shadow" type="button">
+          <button class="card__like-button button-shadow" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
       </article>
 
       <div class="button__floppy">
-        <button class="button__save"  type="button" onclick="window['dialog-id'].showModal();" aria-label="Сохранить на дискету" aria-controls="dialog-id">
+        <button
+          class="button__save button-shadow"
+          type="button"
+          onclick="window['dialog-id'].showModal();"
+          aria-label="Сохранить на дискету"
+          aria-controls="dialog-id"
+        >
           <svg class="floppy-icon" viewBox="0 0 29 28">
             <use href="svg/floppy.svg#floppy-1"></use>
           </svg>
           <span class="button__text">Сохранить на память</span>
-          </button>
         </button>
       </div>
     </main>
 
-    <dialog  class="dialog" id="dialog-id" aria-label="Сохранить на дискету">
+    <dialog class="dialog" id="dialog-id" aria-label="Сохранить на дискету">
       <div class="dialog__content">
         <svg class="dialog__floppy-icon" viewBox="0 0 29 28">
           <use href="./svg/floppy.svg#floppy-1"></use>
         </svg>
-        <p class="button__text dialog__button-text">Вставьте дискету, чтобы продолжить</p>
+        <p class="button__text dialog__button-text">
+          Вставьте дискету, чтобы продолжить
+        </p>
       </div>
       <form class="dialog__button">
-        <button type="button" class="button__confirm" aria-controls="dialog" onclick="window['dialog-id'].close();">
+        <button
+          type="button"
+          class="button__confirm"
+          aria-controls="dialog-id"
+          onclick="window['dialog-id'].close();"
+        >
           <span class="button__text dialog__button-text">ок</span>
+        </button>
       </form>
     </dialog>
 
