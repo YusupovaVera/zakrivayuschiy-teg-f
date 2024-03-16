@@ -27,7 +27,7 @@
   --weight-post-content: 400;
   --border: 2px solid #000000;
   --watermark-shadow: #ffffff;
-  --floppy-icon-color: #000000;
+  --floppy-icon-color: #ffffff;
   --pointer-color: #000000;
   --heart-contour-color: #000000;
   --heart-body-color: #ff0000;
@@ -65,7 +65,7 @@
   --button-text-difference: #00cc14;
 }
 
-@media (prefers-color-sheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background-image: repeating-linear-gradient(
         to right,

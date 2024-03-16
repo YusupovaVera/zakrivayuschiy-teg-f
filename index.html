@@ -105,7 +105,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button button-shadow" type="button">
+          <button class="card__like-button button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -167,7 +167,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button button-shadow" type="button">
+          <button class="card__like-button button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -227,7 +227,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button button-shadow" type="button">
+          <button class="card__like-button button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -291,7 +291,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button button-shadow" type="button">
+          <button class="card__like-button button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -356,7 +356,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button button-shadow" type="button">
+          <button class="card__like-button button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -418,7 +418,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button button-shadow" type="button">
+          <button class="card__like-button button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -482,7 +482,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button button-shadow" type="button">
+          <button class="card__like-button button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -548,7 +548,7 @@
               </g>
             </svg>
           </button>
-          <button class="card__like-button button-shadow" type="button">
+          <button class="card__like-button button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -556,7 +556,7 @@
 
       <div class="button__floppy">
         <button
-          class="button__save button-shadow"
+          class="button__save button"
           type="button"
           onclick="window['dialog-id'].showModal();"
           aria-label="Сохранить на дискету"
@@ -579,16 +579,14 @@
           Вставьте дискету, чтобы продолжить
         </p>
       </div>
-      <form class="dialog__button">
-        <button
-          type="button"
-          class="button__confirm"
-          aria-controls="dialog-id"
-          onclick="window['dialog-id'].close();"
-        >
-          <span class="button__text dialog__button-text">ок</span>
-        </button>
-      </form>
+      <button
+        type="button"
+        class="button__confirm button"
+        aria-controls="dialog-id"
+        onclick="window['dialog-id'].close();"
+      >
+        <span class="button__text">ок</span>
+      </button>
     </dialog>
 
     <script src="./scripts/like.js"></script>

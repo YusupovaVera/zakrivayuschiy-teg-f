@@ -121,14 +121,13 @@
   width: 0;
   height: 2px;
   margin-top: 3px;
-  margin-left: 5px;
   transition: width 0.3s;
   background-color: var(--text-color);
 }
 
 .theme-menu__button:focus-visible::after {
   width: 100%;
-  transform: scaleX(1);
+  transition: scaleX(1);
   transform-origin: left;
 }
 
@@ -155,10 +154,12 @@
   padding: 4px 10px 3px 10px;
 }
 
-.card__image-watermark {
+.card__image {
+  position: relative;
   width: 100%;
-  display: inline-flex;
-  justify-content: right;
+}
+
+.card__image-watermark {
   position: absolute;
   font-family: var(--accent-font, "Papyrus", fantasy);
   font-size: 14px;
@@ -166,14 +167,25 @@
   line-height: 63px;
   z-index: 1;
   opacity: 0.5;
-  text-shadow: 1px 0 var(--watermark-shadow, #ffffff),
-    -1px 0 var(--watermark-shadow, #ffffff);
-  color: var(--text-color, #000000);
-  padding-right: 13px;
+  text-shadow: -1px 0 var(--watermark-shadow, #ffffff),
+    0 1px var(--watermark-shadow, #ffffff),
+    1px 0 var(--watermark-shadow, #ffffff),
+    0 -1px var(--watermark-shadow, #ffffff);
+  color: currentColor;
+  top: 0px;
+  right: 13px;
+  mix-blend-mode: hard-light;
+}
 
-  position: absolute;
-  max-width: 700px;
-  min-width: 375px;
+@supports (
+  (text-stroke: 1px var(--watermark-shadow, #ffffff)) or
+    (-webkit-text-stroke: 1px var(--watermark-shadow, #ffffff))
+) {
+  .card__image-watermark {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--watermark-shadow, #ffffff);
+    text-stroke: 1px var(--watermark-shadow, #ffffff);
+  }
 }
 
 .picture {
@@ -236,19 +248,19 @@
   border: var(--border);
 }
 
-.button-shadow {
+.button {
   position: relative;
   background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
   border: var(--border);
 }
 
-.button-shadow:focus {
+.button:focus {
   box-shadow: 2px 2px 0 0 var(--text-color);
   outline: none;
 }
 
-.button-shadow::before {
+.button::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -261,7 +273,7 @@
   transform-origin: left;
 }
 
-.button-shadow:hover::before {
+.button:hover::before {
   transform: scaleX(1);
   cursor: pointer;
 }
@@ -284,7 +296,7 @@
   height: 84px;
   background: transparent;
   border: var(--border);
-  margin: 50px 0 0 0;
+  margin: 52px 0 100px 0;
   background-color: var(--background-color, #ffffff);
   display: flex;
   flex-direction: column;
@@ -299,7 +311,7 @@
   font-family: var(--accent-font, "Papyrus", fantasy);
   font-size: 14px;
   font-weight: 400;
-  line-height: 13px;
+  line-height: 21px;
   color: var(--button-text-difference);
   background: transparent;
   mix-blend-mode: difference;
@@ -313,16 +325,17 @@
   width: 30px;
   height: 27px;
   color: var(--floppy-icon-color);
+  mix-blend-mode: difference;
 }
 
 .button__confirm {
-  width: 257px;
+  width: 100%;
   height: 38px;
   border: var(--border);
   background-color: var(--background-color);
   cursor: pointer;
 }
-
+/*
 .dialog__button-text {
   text-transform: uppercase;
   font-family: var(--accent-font, "Papyrus", fantasy);
@@ -338,10 +351,11 @@
   justify-content: center;
   padding-bottom: 20px;
 }
-
+*/
 .dialog {
   background-color: var(--background-color);
   border: var(--border);
+  padding: 23px 22px 20px 23px;
 }
 
 .dialog__content {
@@ -349,8 +363,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 23px 22px 20px 23px;
   gap: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .dialog::backdrop {
@@ -361,6 +376,7 @@
   min-width: 39px;
   height: 39px;
   color: var(--floppy-icon-color);
+  mix-blend-mode: difference;
 }
 
 .size__blok {
@@ -392,11 +408,7 @@
   }
 
   .dialog__content {
-    width: 323px;
-    padding: 20px 17px 30px 17px;
-  }
-
-  .button__confirm {
-    width: 293px;
+    width: 305px;
+    padding: 0 20px 30px 0;
   }
 }
