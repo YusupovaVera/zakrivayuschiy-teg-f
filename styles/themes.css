@@ -26,6 +26,7 @@
   --weight-post-title: 700;
   --weight-post-content: 400;
   --border: 2px solid #000000;
+  --heart-border-color: #000000;
   --watermark-shadow: #ffffff;
   --floppy-icon-color: #ffffff;
   --pointer-color: #000000;
@@ -56,6 +57,7 @@
   --weight-post-title: 785;
   --weight-post-content: 465;
   --border: 2px solid #00cc14;
+  --heart-border-color: #00cc14;
   --watermark-shadow: #000000;
   --floppy-icon-color: #00cc14;
   --pointer-color: #00cc14;
@@ -87,6 +89,7 @@
     --weight-post-title: 785;
     --weight-post-content: 465;
     --border: 2px solid #00cc14;
+    --heart-border-color: #00cc14;
     --watermark-shadow: #000000;
     --floppy-icon-color: #00cc14;
     --pointer-color: #00cc14;

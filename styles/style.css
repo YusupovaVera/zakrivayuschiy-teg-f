@@ -88,13 +88,14 @@
   appearance: none;
   padding-top: 14px;
   transition: opacity 0.3s ease;
+  position: relative;
 }
 
-.theme-menu__button:disabled::after {
+.theme-menu__button:disabled::before {
   content: "▶";
-  position: relative;
-  top: -15px;
-  left: 0;
+  position: absolute;
+  top: 12px;
+  left: -12px;
   color: var(--pointer-color, #000000);
   font-family: var(--accent-font, "Papyrus", fantasy);
   animation: shootout-shift 0.5s ease-in-out alternate infinite;
@@ -127,7 +128,7 @@
 
 .theme-menu__button:focus-visible::after {
   width: 100%;
-  transition: scaleX(1);
+  transform: scaleX(1);
   transform-origin: left;
 }
 
@@ -171,7 +172,7 @@
     0 1px var(--watermark-shadow, #ffffff),
     1px 0 var(--watermark-shadow, #ffffff),
     0 -1px var(--watermark-shadow, #ffffff);
-  color: currentColor;
+  color: var(--text-color, #000000);
   top: 0px;
   right: 13px;
   mix-blend-mode: hard-light;
@@ -184,6 +185,7 @@
   .card__image-watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--watermark-shadow, #ffffff);
+    /* text-stroke -  не является частью стандарта поэтому валидатор на него ругается */
     text-stroke: 1px var(--watermark-shadow, #ffffff);
   }
 }
@@ -232,11 +234,10 @@
 .card__icon-button {
   display: flex;
   justify-content: center;
-  border: 2px solid transparent;
+  border: 0;
   background: transparent;
   outline: none;
   align-items: center;
-  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -244,8 +245,9 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: none;
-  border: var(--border);
+  outline: 2px solid var(--heart-border-color);
+  outline-offset: -2px;
+  transition: outline 0.3s ease;
 }
 
 .button {
@@ -296,12 +298,12 @@
   height: 84px;
   background: transparent;
   border: var(--border);
-  margin: 52px 0 100px 0;
+  margin: 50px 0 100px 0;
   background-color: var(--background-color, #ffffff);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
   outline: none;
   cursor: pointer;
@@ -322,8 +324,8 @@
 }
 
 .floppy-icon {
-  width: 30px;
-  height: 27px;
+  width: 28px;
+  height: 28px;
   color: var(--floppy-icon-color);
   mix-blend-mode: difference;
 }
@@ -334,28 +336,14 @@
   border: var(--border);
   background-color: var(--background-color);
   cursor: pointer;
-}
-/*
-.dialog__button-text {
   text-transform: uppercase;
-  font-family: var(--accent-font, "Papyrus", fantasy);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 0em;
-  gap: 20px;
 }
 
-.dialog__button {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-*/
 .dialog {
   background-color: var(--background-color);
   border: var(--border);
-  padding: 23px 22px 20px 23px;
+  padding: 30px 40px 30px 40px;
+  max-width: 341px;
 }
 
 .dialog__content {
@@ -399,6 +387,14 @@
   .header__title {
     padding: 37px 0 0 0;
   }
+  .theme-menu__list {
+    padding-top: 13px;
+  }
+
+  .card__image-watermark {
+    top: 5px;
+    right: 25px;
+  }
 
   .button__save {
     width: 335px;
@@ -407,8 +403,13 @@
     flex-direction: row;
   }
 
-  .dialog__content {
-    width: 305px;
-    padding: 0 20px 30px 0;
+  .floppy-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .dialog {
+    max-width: 353px;
+    padding: 30px;
   }
 }

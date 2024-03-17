@@ -13,6 +13,10 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+.heart {
+  transform-origin: center;
+}
+
 .like-icon .contour {
   transition: fill;
   fill: var(--heart-contour-color);
@@ -79,18 +83,11 @@
 }
 
 .like-icon.is-liked .heart {
-  transform-origin: center;
-  animation-direction: alternate;
-  animation-duration: 0.3s;
-  transition-delay: 0.1s ease-in;
-  animation-name: scale-shift;
+  animation: scale-shift 0.3s ease-in 0.1s 1 alternate;
 }
 
 .like-icon.is-liked .sparks {
-  animation-direction: alternate;
-  animation-duration: 0.3s;
-  animation-name: sparks-shift;
-  transition-delay: 0.3s ease-in;
+  animation: sparks-shift 0.3s ease-in 0.3s 1 alternate;
 }
 
 @keyframes scale-shift {
@@ -117,9 +114,9 @@
 
 @keyframes shootout-shift {
   from {
-    left: -23px;
+    left: -13px;
   }
   to {
-    left: -25px;
+    left: -15px;
   }
 }
